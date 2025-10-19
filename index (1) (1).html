@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💖 Thiệp 20/10 Gửi Mẹ và Các Chị 💐</title>
+<style>
+    body {
+        background: linear-gradient(to bottom right, #ffdde1, #ee9ca7);
+        font-family: "Segoe Script", cursive;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    h1 {
+        color: #d63384;
+        font-size: 50px;
+        margin-top: 30px;
+        text-shadow: 2px 2px 4px #fff;
+    }
+
+    p {
+        color: #8b005d;
+        font-size: 24px;
+        margin: 20px auto;
+        width: 80%;
+        line-height: 1.6;
+        text-shadow: 1px 1px 2px #fff;
+    }
+
+    #qr {
+        margin-top: 30px;
+        border: 8px solid white;
+        border-radius: 20px;
+        padding: 15px;
+        background: white;
+        display: inline-block;
+        box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+    }
+
+    /* Hiệu ứng hoa rơi */
+    .flower {
+        position: absolute;
+        top: -50px;
+        color: pink;
+        font-size: 24px;
+        animation: fall 10s linear infinite;
+    }
+
+    @keyframes fall {
+        0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+        100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+
+    button {
+        background: #ff66b2;
+        color: white;
+        font-size: 20px;
+        border: none;
+        border-radius: 15px;
+        padding: 10px 25px;
+        cursor: pointer;
+        margin-top: 20px;
+        box-shadow: 0 0 10px #ff99cc;
+    }
+
+    button:hover {
+        background: #ff3385;
+    }
+</style>
+</head>
+<body>
+
+<h1>💐 Chúc Mừng Ngày 20/10/2025 💖</h1>
+<p>
+    Gửi Mẹ và Các Chị thân yêu,<br>
+    Con/cháu xin chúc mọi người thật nhiều niềm vui, luôn xinh đẹp, mạnh khỏe,<br>
+    hạnh phúc và tràn ngập yêu thương trong ngày đặc biệt này 🌸💞<br>
+    Cảm ơn Mẹ và các Chị đã luôn yêu thương, chăm sóc và truyền cảm hứng mỗi ngày 💖
+</p>
+
+<div id="qr"></div>
+<br>
+<button onclick="taoQR()">💌 Tạo mã QR Lời Chúc 💌</button>
+
+<script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
+<script>
+function taoQR() {
+    const loiChuc = "💐 Mẹ và Các Chị yêu ơi! Chúc ngày 20/10 thật nhiều niềm vui, hạnh phúc và luôn rạng rỡ như hoa nhé 💕 – Gửi từ con/em với tất cả yêu thương! 💝";
+    const qr = new QRious({
+        element: document.getElementById("qr"),
+        value: loiChuc,
+        size: 250,
+        background: "white",
+        foreground: "#d63384"
+    });
+    alert("🌸 Mã QR đã được tạo! Hãy dùng điện thoại quét để xem lời chúc 💖");
+}
+
+// 🌸 Hiệu ứng hoa rơi ngẫu nhiên
+function taoHoa() {
+    const hoa = document.createElement("div");
+    hoa.classList.add("flower");
+    hoa.style.left = Math.random() * window.innerWidth + "px";
+    hoa.style.animationDuration = 5 + Math.random() * 5 + "s";
+    hoa.innerHTML = ["🌸", "🌷", "💖", "🌺", "🌼"][Math.floor(Math.random() * 5)];
+    document.body.appendChild(hoa);
+    setTimeout(() => hoa.remove(), 10000);
+}
+setInterval(taoHoa, 300);
+</script>
+
+</body>
+</html>
